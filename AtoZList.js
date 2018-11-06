@@ -35,6 +35,12 @@ export default class AtoZList extends Component {
     renderSection: PropTypes.func,
     onEndReached: PropTypes.func,
     onScroll: PropTypes.func,
+    incrementDelay: PropTypes.number.isRequired,
+    initialNumToRender: PropTypes.number.isRequired,
+    pageSize: PropTypes.number.isRequired,
+    maxNumToRender: PropTypes.number.isRequired,
+    numToRenderAhead: PropTypes.number.isRequired,
+    numToRenderBehind: PropTypes.number.isRequired,
   };
 
   constructor(props, context) {
@@ -86,12 +92,12 @@ export default class AtoZList extends Component {
             dataSource={this.state.dataSource}
             renderCell={this.props.renderCell}
             renderSectionHeader={this.props.renderSection}
-            incrementDelay={16}
-            initialNumToRender={8}
-            pageSize={Platform.OS === 'ios' ? 15 : 8}
-            maxNumToRender={70}
-            numToRenderAhead={40}
-            numToRenderBehind={4}
+            incrementDelay={this.props.incrementDelay}
+            initialNumToRender={this.props.initialNumToRender}
+            pageSize={this.props.pageSize}
+            maxNumToRender={this.props.maxNumToRender}
+            numToRenderAhead={this.props.numToRenderAhead}
+            numToRenderBehind={this.props.numToRenderBehind}
             onEndReached={this.props.onEndReached}
             onScroll={this.props.onScroll}
           />

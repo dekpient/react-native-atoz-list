@@ -12,8 +12,8 @@ class LetterPicker extends Component {
         );
     }
 }
-
-const Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+// TODO wth
+let Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
 export default class AlphabetPicker extends Component {
     constructor(props, context) {
         super(props, context);
